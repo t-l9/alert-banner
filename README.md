@@ -1,4 +1,4 @@
-# alert-banner
+# Alert Banner
 ## Instructions
 1. Clone repo
 2. Go to localhost/<dir name>
