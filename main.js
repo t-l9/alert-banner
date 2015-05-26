@@ -14,6 +14,8 @@
             bgColor: '#2ecc71', // green
             content: "Scheduled maintenance will occur shortly.",
             className: "overlook-bar",
+            font: "HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
+            fontColor: '#ffffff',
             collapse: false
         }
 
@@ -62,6 +64,8 @@
         this.banner.className             = this.options.className;
         this.banner.style.height          = this.height + "px";
         this.banner.style.width           = this.width + "%";
+        this.banner.style.fontFamily      = this.options.font;
+        this.banner.style.color           = this.options.fontColor;
         this.banner.style.backgroundColor = this.options.bgColor;
 
         container = document.createElement('div');

@@ -2,15 +2,15 @@
 body { margin: 0; }
 
 .overlook-bar {
-    color: #fff;
-    font-family: 
-                 "HelveticaNeue-Light",
-                 "Helvetica Neue Light",
-                 "Helvetica Neue",
-                 Helvetica,
-                 Arial,
-                 "Lucida Grande",
-                 sans-serif;
+/*     color: #fff;
+font-family:
+             "HelveticaNeue-Light",
+             "Helvetica Neue Light",
+             "Helvetica Neue",
+             Helvetica,
+             Arial,
+             "Lucida Grande",
+             sans-serif; */
     line-height: 60px;
     text-align: center;
 }
