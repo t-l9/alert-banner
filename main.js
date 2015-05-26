@@ -7,19 +7,20 @@
 
         // constants
         this.width = 100;
-        this.height = 50;
+        this.height = 65;
 
         // default properties
         var defaults = {
             bgColor: '#2ecc71', // green
-            fontColor: '#ffffff',
-            content: "",
+            content: "Scheduled maintenance will occur shortly.",
             className: "overlook-bar",
             collapse: false
         }
 
         if (arguments[0] && typeof arguments[0] === "object") {
             this.options = extendDefaults(defaults, arguments[0]);
+        } else {
+            this.options = defaults;
         }
 
     }
@@ -59,8 +60,8 @@
 
         this.banner                       = document.createElement('div');
         this.banner.className             = this.options.className;
-        this.banner.style.height          = this.options.height + "px";
-        this.banner.style.width           = this.options.width + "px";
+        this.banner.style.height          = this.height + "px";
+        this.banner.style.width           = this.width + "%";
         this.banner.style.backgroundColor = this.options.bgColor;
 
         container = document.createElement('div');
