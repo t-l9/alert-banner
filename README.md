@@ -6,4 +6,5 @@
     * In the console, var foo = new Banner();
     * Then foo.open();
     * Voila
+
 The source is located in src for both dev and production.
