@@ -7,15 +7,13 @@
 
         // constants
         this.width = 100;
-        this.height = 65;
+        this.transitionEnd = transitionSelect();
 
         // default properties
         var defaults = {
             bgColor: '#2ecc71', // green
             content: "Scheduled maintenance will occur shortly.",
-            className: "overlook-bar",
-            font: "HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
-            fontColor: '#ffffff',
+            className: "overlook-bar open",
             collapse: false
         };
 
@@ -32,10 +30,16 @@
     //****************************
     Banner.prototype.open = function() {
         init.call(this);
+        eventInit.call(this);
     };
 
     Banner.prototype.collapse = function() {
+        var _ = this;
+        this.banner.className = this.banner.className.replace("open", "collapse");
 
+        this.banner.addEventListener(this.transitionEnd, function() {
+          _.banner.parentNode.removeChild(_.banner);
+        });
     };
 
     //****************************
@@ -60,11 +64,13 @@
 
         this.banner                       = document.createElement('div');
         this.banner.className             = this.options.className;
-        this.banner.style.height          = this.height + "px";
         this.banner.style.width           = this.width + "%";
-        this.banner.style.fontFamily      = this.options.font;
-        this.banner.style.color           = this.options.fontColor;
         this.banner.style.backgroundColor = this.options.bgColor;
+
+        this.close = document.createElement('button');
+        this.close.className = "collapse";
+        this.close.innerHTML = "x";
+        this.banner.appendChild(this.close);
 
         container = document.createElement('div');
         container.className = 'overlook-container';
@@ -72,8 +78,21 @@
 
         this.banner.appendChild(container);
         docFrag.appendChild(this.banner);
-        document.body.appendChild(docFrag);
+        // document.body.appendChild(docFrag);
 
+        document.body.insertBefore(docFrag, document.body.firstChild);
+    }
+
+    function eventInit() {
+        this.close.addEventListener('click', this.collapse.bind(this));
+    }
+
+    function transitionSelect() {
+        var el = document.createElement('div');
+        if (el.style.WebkitTransition) return 'webkitTransitionEnd';
+        if (el.style.OTransition) return 'oTransitionEnd';
+
+        return 'transitionend';
     }
 
 })();

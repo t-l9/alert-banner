@@ -1,16 +1,72 @@
 /* @import url(http://fonts.googleapis.com/css?family=Lato); */
 body { margin: 0; }
-
-.overlook-bar {
-/*     color: #fff;
-font-family:
+section {
+    height: 400px;
+    width: 100%;
+    background: #eee;
+}
+.overlook-bar.open {
+    color: #fff;
+    font-family:
              "HelveticaNeue-Light",
              "Helvetica Neue Light",
              "Helvetica Neue",
              Helvetica,
              Arial,
              "Lucida Grande",
-             sans-serif; */
-    line-height: 60px;
+             sans-serif;
+    height: 65px;
+    line-height: 65px;
     text-align: center;
+}
+
+.overlook-bar.collapse {
+    -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+            -o-transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
+    color: #fff;
+    font-family:
+             "HelveticaNeue-Light",
+             "Helvetica Neue Light",
+             "Helvetica Neue",
+             Helvetica,
+             Arial,
+             "Lucida Grande",
+             sans-serif;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    margin-top: -65px;
+}
+
+.overlook-bar button.collapse {
+    height: 20px;
+    width: 20px;
+    line-height: 13px;
+    background: #e74c3c;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+                transition: all .2s ease-in-out;
+}
+
+button.collapse:hover {
+    background: #c0392b;
+}
+
+.overlook-bar.collapse button.collapse {
+    /* margin-top: -100px; */
+    -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+                transition: all .2s ease-in-out;
 }
