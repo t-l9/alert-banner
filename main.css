@@ -41,18 +41,17 @@ section {
 }
 
 .overlook-bar button.collapse {
-    height: 20px;
-    width: 20px;
-    line-height: 13px;
-    background: #e74c3c;
-    border: none;
-    outline: none;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 12px;
+    margin: 20px 25px 0 0;
+    float: right;
+    padding: 5px 7px 10px;
+    cursor: pointer;
     color: #fff;
-    font-size: 16px;
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    border-radius: 4px;
+    border: 0;
+    outline: none;
+    background: #e74c3c;
     -webkit-transition: all .2s ease-in-out;
         -moz-transition: all .2s ease-in-out;
             -o-transition: all .2s ease-in-out;
